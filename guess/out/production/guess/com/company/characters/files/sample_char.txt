@@ -1,0 +1,3 @@
+sample_char
+true
+false

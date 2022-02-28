@@ -1,0 +1,11 @@
+Name?
+Male?
+Fictional?
+Older than 40?
+Alive?
+Artist?
+Tech Industry?
+Brown hair?
+Married?
+Children?
+Appearance in movie?
