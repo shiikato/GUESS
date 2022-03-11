@@ -17,7 +17,7 @@ public class GUI {
 
     //region fonts
     public Font font = new Font("Montserrat", Font.PLAIN, 16);
-    public Font headerFont = new Font("Montserrat", Font.PLAIN, 24);
+    public Font headerFont = new Font("Montserrat", Font.PLAIN, 18);
     //endregion
     //region window-specs
     private Color bg = new Color(255, 235, 255);
@@ -29,7 +29,7 @@ public class GUI {
     private JFrame frame;
     private JTextField tf;
 
-        //region JButtons
+    //region JButtons
         private JButton noBtn;
         private JButton yesBtn;
         //endregion
@@ -106,7 +106,6 @@ public class GUI {
         @Override
         public void actionPerformed(ActionEvent e) {
             Main.tree.onTrue();
-            setQuestion(Main.tree.pointer.prompt);
         }
     };
 
@@ -115,13 +114,19 @@ public class GUI {
         @Override
         public void actionPerformed(ActionEvent e) {
             Main.tree.onFalse();
-            setQuestion(Main.tree.pointer.prompt);
         }
     };
     //endregion
+
+    public void restartGui()
+    {
+        setYesBtn("Yes");
+        setNoBtn("No");
+    }
 
     public void exit()
     {
         System.exit(0);
     }
+
 }

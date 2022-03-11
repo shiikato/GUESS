@@ -4,8 +4,6 @@ public class character
 {
     private String name;
     private boolean[] parameters;
-    private int trueAction;
-    private int falseAction;
 
     public character(String _name, boolean[] _parameters) //constructor function
     {
