@@ -1,0 +1,10 @@
+Leonardo DaVinci
+true
+true
+false
+false
+false
+true
+false
+true
+false

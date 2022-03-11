@@ -1,0 +1,10 @@
+Wolfgang Amadeus Mozart
+true
+true
+false
+false
+false
+true
+true
+true
+true
