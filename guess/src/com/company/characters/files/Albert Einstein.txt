@@ -1,7 +1,7 @@
-Elon Musk
+Albert Einstein
 true
 true
-true
+false
 false
 true
 true
