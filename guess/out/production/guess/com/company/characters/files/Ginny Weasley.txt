@@ -1,0 +1,6 @@
+Ginny Weasley
+false
+false
+true
+true
+true
