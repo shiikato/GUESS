@@ -1,0 +1,6 @@
+Anne Frank
+false
+true
+false
+true
+false

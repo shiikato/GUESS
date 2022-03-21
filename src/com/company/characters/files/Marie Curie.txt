@@ -1,0 +1,6 @@
+Marie Curie
+false
+true
+false
+false
+true
