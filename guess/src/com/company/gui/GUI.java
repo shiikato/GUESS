@@ -17,7 +17,7 @@ public class GUI {
 
     //region fonts
     public Font font = new Font("Montserrat", Font.PLAIN, 16);
-    public Font headerFont = new Font("Montserrat", Font.PLAIN, 18);
+    public Font headerFont = new Font("Montserrat", Font.PLAIN, 20);
     //endregion
     //region window-specs
     private Color bg = new Color(255, 235, 255);
@@ -39,7 +39,6 @@ public class GUI {
     public void initializeGUI()
     {
         //region frame
-        //Creating the Frame
         frame = new JFrame("GUESS ME");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(sizeX, sizeY);
@@ -62,7 +61,6 @@ public class GUI {
         //endregion
 
         //region text field
-        //question text field
         tf = new JTextField(Main.tree.pointer.prompt);
         tf.setFont(headerFont); //set font to Montserrat-plain-24
         tf.setBorder(border); //remove the border
@@ -82,6 +80,22 @@ public class GUI {
     {
         question = _text;
         tf.setText(_text);
+        if(_text.length() > 50)
+        {
+            changeFontSize(14, tf.getFont());
+            return;
+        }
+        if(_text.length() > 40)
+        {
+            changeFontSize(16, tf.getFont());
+            return;
+        }
+        if(_text.length() < 40)
+        {
+            changeFontSize(18, tf.getFont());
+            return;
+        }
+
     }
 
     public void setYesBtn(String _text)
@@ -122,6 +136,12 @@ public class GUI {
     {
         setYesBtn("Yes");
         setNoBtn("No");
+    }
+
+    public void changeFontSize(int _size, Font _font)
+    {
+        Font font = new Font(_font.getName(), _font.getStyle(), _size);
+        tf.setFont(font);
     }
 
     public void exit()
