@@ -1,9 +1,0 @@
-Felix "xQc" Lengyel
-true
-true
-true
-false
-false
-false
-true
-false

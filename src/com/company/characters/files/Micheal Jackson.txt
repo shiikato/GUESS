@@ -1,9 +1,0 @@
-Micheal Jackson
-true
-true
-false
-false
-fase
-true
-true
-false

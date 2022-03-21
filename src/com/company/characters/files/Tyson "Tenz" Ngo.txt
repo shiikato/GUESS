@@ -1,9 +1,0 @@
-Tyson "Tenz" Ngo
-true
-true
-true
-false
-false
-false
-true
-true

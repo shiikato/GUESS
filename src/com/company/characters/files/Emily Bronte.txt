@@ -1,9 +1,0 @@
-Emily Bronte
-false
-true
-false
-false
-false
-true
-false
-true

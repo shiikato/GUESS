@@ -1,7 +1,0 @@
-Grover Underwood
-true
-false
-true
-false
-true
-false

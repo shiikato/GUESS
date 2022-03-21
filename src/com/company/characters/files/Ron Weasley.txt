@@ -1,6 +1,0 @@
-Ron Weasley
-true
-false
-true
-true
-false

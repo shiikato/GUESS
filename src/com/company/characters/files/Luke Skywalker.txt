@@ -1,6 +1,0 @@
-Luke Skywalker
-true
-false
-false
-true
-true

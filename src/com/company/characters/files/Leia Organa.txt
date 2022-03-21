@@ -1,6 +1,0 @@
-Leia Organa
-false
-false
-false
-true
-true

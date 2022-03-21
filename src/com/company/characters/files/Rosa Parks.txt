@@ -1,6 +1,0 @@
-Rosa Parks
-false
-true
-false
-true
-true

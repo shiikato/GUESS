@@ -1,7 +1,0 @@
-Albert Einstein
-true
-true
-false
-false
-true
-true

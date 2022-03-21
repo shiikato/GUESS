@@ -1,6 +1,0 @@
-Hermione Granger
-false
-false
-true
-true
-false

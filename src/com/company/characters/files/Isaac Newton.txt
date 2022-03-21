@@ -1,7 +1,0 @@
-Isaac Newton
-true
-true
-false
-false
-true
-false

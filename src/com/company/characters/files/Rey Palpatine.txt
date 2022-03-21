@@ -1,6 +1,0 @@
-Rey Palpatine
-false
-false
-false
-true
-false
