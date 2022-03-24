@@ -13,8 +13,9 @@ public abstract class Main {
 
     public static void main(String[] args)
     {
-        gui.initializeGUI();
-        characterManager.initializeAllCharacters(path);
-        tree.buildTree();
+        gui.initializeGUI(); //load GUI
+        characterManager.initializeAllCharacters(path); //read characters from txt files
+        tree.buildTree(); //hard code the nodes into tree
+        tree.insertCharacters(characterManager.characters); //insert the characters into the tree
     }
 }

@@ -11,11 +11,11 @@ import java.util.Scanner;
 
 public class CharacterManager
 {
-    public character[] characters;
+    public character[] characters; //list of all characters
 
     private character initializeCharacter(String _path)
     {
-        File file = new File(_path);
+        File file = new File(_path); //filepath for the character
         try {
 
             //region get-parameters
@@ -33,35 +33,33 @@ public class CharacterManager
             }
             //endregion
 
-            System.out.println("Character " + name + " initialized."); //delete later -> shows that the character was created
+            System.out.println("Character " + name + " initialized."); //-> success creating character
 
-            return new character(name, parameters);
+            return new character(name, parameters); //return character
 
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
         }
 
-        return null;
+        return null; //if file is not found return null
     }
 
-    public String[] getFiles(String _path)
+    public String[] getFiles(String _path) //get String[] of all character file names
     {
         File path = new File(_path);
-        String[] pathNames;
-        pathNames = path.list();
+        String[] pathNames; //empty string for character file names
+        pathNames = path.list(); //parse all character file names into the array
 
-        return pathNames;
+        return pathNames; //return the path names
     }
 
-    private int getFileAmount(String _path)
+    private int getFileAmount(String _path) //get the amount of character files -> how many characters need to be creted
     {
-        File path = new File(_path);
-        String[] pathNames;
-        pathNames = path.list();
-        return pathNames.length;
+        String[] pathNames = getFiles(_path); //get array of file names
+        return pathNames.length; //return length of file name array
     }
 
-    public void createNewCharacter(character _character, String _path)
+    public void createNewCharacter(character _character, String _path) //unused -> method for character creation through txt files
     {
         String path = _path + "/" + _character.getName() + ".txt"; //convert raw path to filepath
         try { //surrounded by try catch in case file is not found
@@ -74,7 +72,7 @@ public class CharacterManager
 
                 //write character information to file
                 fileWriter.write(_character.getName() + "\n");
-                for (int i = 0; i < 5; i++) {
+                for (int i = 0; i < _character.getParameters().length; i++) {
                     fileWriter.write(String.valueOf(_character.getParameters()[i]) + "\n"); //isMale returns a boolean -> valueOf converts bool to String
                 }
 
@@ -89,13 +87,13 @@ public class CharacterManager
 
     public character[] initializeAllCharacters(String _path)
     {
-        String[] characterNames = getFiles(_path);
-        characters = new character[getFileAmount(_path)];
-        for (int i=0; i<getFileAmount(_path); i++)
+        String[] characterNames = getFiles(_path); //get file path
+        characters = new character[getFileAmount(_path)]; //
+        for (int i=0; i<getFileAmount(_path); i++) //repeat for every character in the folder
         {
-            characters[i] = initializeCharacter(_path + "/" + characterNames[i]);
+            characters[i] = initializeCharacter(_path + "/" + characterNames[i]); //initialize character i
         }
-        return characters;
+        return characters; //return list of all characters
     }
 
 

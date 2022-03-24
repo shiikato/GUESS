@@ -8,17 +8,16 @@ public class character
     public character(String _name, boolean[] _parameters) //constructor function
     {
         name = _name;
-
         parameters = _parameters;
     }
 
     public String getName()
     {
         return name;
-    }
+    } //return characters name
 
     public boolean[] getParameters()
     {
         return this.parameters;
-    }
+    } //return parameters[]
 }

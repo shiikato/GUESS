@@ -84,7 +84,6 @@ public class CharacterTree {
 
     public void buildTree()
     {
-        //region Tree-organization
         //Hard coding character tree to individualize questions for each path
         //region Male
         root.leftChild = male;
@@ -159,9 +158,6 @@ public class CharacterTree {
                     movie_F.leftChild = sw_F;
             //endregion
         //endregion
-        //endregion
-
-        insertCharacters(Main.characterManager.characters); //insert the characters into the tree
     }
 
     public void insertCharacters(character[] _characters)
@@ -189,50 +185,50 @@ public class CharacterTree {
     //region Button-reactions
     public void onTrue()
     {
-        if(characterFound) Main.gui.exit();
-        if(pointer.leftChild == null)
+        if(characterFound) Main.gui.exit(); //if character is found or program is at dead-end and yes/exit is pressed, exit the program
+        if(pointer.leftChild == null) //if it does not have a left child to go to
         {
-            pointer = new Node("Character not found!", true);
-            Main.gui.setQuestion(pointer.prompt);
+            pointer = new Node("Character not found!", true); //set pointer to new end-node
+            Main.gui.setQuestion(pointer.prompt); //set prompt to character not found
         }
-        if(pointer.leftChild != null && !pointer.isCharacter)
+        if(pointer.leftChild != null && !pointer.isCharacter) //if there is a left child and character was not found yet/dead-end
         {
-            pointer = pointer.leftChild;
-            Main.gui.setQuestion(pointer.prompt);
+            pointer = pointer.leftChild; //go to left child
+            Main.gui.setQuestion(pointer.prompt); //set question to the node's one
         }
-        if(pointer.isCharacter)
+        if(pointer.isCharacter) //if character is found/dead-end
         {
-            Main.gui.setYesBtn("Exit");
-            Main.gui.setNoBtn("Play again");
-            characterFound = true;
+            Main.gui.setYesBtn("Exit"); //change yes btn to exit
+            Main.gui.setNoBtn("Play again"); //change no btn to play again
+            characterFound = true; //character was found
         }
     }
 
     public void onFalse()
     {
-        if (characterFound)
+        if (characterFound) //if character is found/at dead-end and no/play again is pressed
         {
-            pointer = root;
-            characterFound = false;
-            Main.gui.setQuestion(pointer.prompt);
-            Main.gui.restartGui();
-            return;
+            pointer = root; //go back to root
+            characterFound = false; //set character to not found
+            Main.gui.setQuestion(pointer.prompt); //set question to root
+            Main.gui.restartGui(); //restart GUI
+            return; //skip other if-statements
         }
-        if(pointer.rightChild == null)
+        if(pointer.rightChild == null) //if there is no right child to go to
         {
-            pointer = new Node("Character not found!", true);
-            Main.gui.setQuestion(pointer.prompt);
+            pointer = new Node("Character not found!", true); //set pointer to new end-node
+            Main.gui.setQuestion(pointer.prompt); //set prompt to character not found
         }
-        if(pointer.rightChild != null && !pointer.isCharacter)
+        if(pointer.rightChild != null && !pointer.isCharacter) //if there is a right child and character was not found yet/dead-end
         {
-            pointer = pointer.rightChild;
-            Main.gui.setQuestion(pointer.prompt);
+            pointer = pointer.rightChild; //go to right child
+            Main.gui.setQuestion(pointer.prompt); //set question to node's one
         }
-        if(pointer.isCharacter)
+        if(pointer.isCharacter) //if character is found/dead-end
         {
-            Main.gui.setYesBtn("Exit");
-            Main.gui.setNoBtn("Play again");
-            characterFound = true;
+            Main.gui.setYesBtn("Exit"); //set yes btn to exit
+            Main.gui.setNoBtn("Play again"); //set no btn to play again
+            characterFound = true; //character was found
         }
     }
     //endregion

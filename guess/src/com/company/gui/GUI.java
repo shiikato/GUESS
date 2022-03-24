@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 
 public class GUI {
 
-    //credit to Guru99
+    //credit to https://www.guru99.com/java-swing-gui.html
 
     public String question;
 
@@ -32,7 +32,7 @@ public class GUI {
     //region JButtons
         private JButton noBtn;
         private JButton yesBtn;
-        //endregion
+    //endregion
 
     //endregion
 
@@ -80,19 +80,19 @@ public class GUI {
     {
         question = _text;
         tf.setText(_text);
-        if(_text.length() > 50)
+        if(_text.length() > 50) //if the prompt is too long to display
         {
-            changeFontSize(14, tf.getFont());
+            changeFontSize(14, tf.getFont()); //decrease font size
             return;
         }
-        if(_text.length() > 40)
+        if(_text.length() > 40) //if prompt is too long for default font size
         {
-            changeFontSize(16, tf.getFont());
+            changeFontSize(16, tf.getFont()); //decrease font size
             return;
         }
-        if(_text.length() < 40)
+        if(_text.length() < 40) //if prompt is short enough
         {
-            changeFontSize(18, tf.getFont());
+            changeFontSize(18, tf.getFont()); //set default font size
             return;
         }
 
@@ -110,8 +110,8 @@ public class GUI {
 
     private void setBtnActions()
     {
-        yesBtn.addActionListener(yesAction);
-        noBtn.addActionListener(noAction);
+        yesBtn.addActionListener(yesAction); //add actionListener to btn
+        noBtn.addActionListener(noAction); //add actionListener to btn
     }
 
     //region btnActionListeners
@@ -120,7 +120,7 @@ public class GUI {
         @Override
         public void actionPerformed(ActionEvent e) {
             Main.tree.onTrue();
-        }
+        } //if btn is pressed execute CharacterTree.onTrue()
     };
 
     private ActionListener noAction = new ActionListener() {
@@ -128,25 +128,25 @@ public class GUI {
         @Override
         public void actionPerformed(ActionEvent e) {
             Main.tree.onFalse();
-        }
+        }//if btn is pressed execute CharacterTree.onFalse()
     };
     //endregion
 
     public void restartGui()
     {
-        setYesBtn("Yes");
-        setNoBtn("No");
+        setYesBtn("Yes"); //set yes btn to yes
+        setNoBtn("No"); //set no btn to no
     }
 
     public void changeFontSize(int _size, Font _font)
     {
-        Font font = new Font(_font.getName(), _font.getStyle(), _size);
-        tf.setFont(font);
+        Font font = new Font(_font.getName(), _font.getStyle(), _size); //create new font that is the same font style but different size
+        tf.setFont(font); //set textField's font
     }
 
     public void exit()
     {
         System.exit(0);
-    }
+    } //exit program
 
 }
